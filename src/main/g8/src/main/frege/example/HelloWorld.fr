@@ -1,0 +1,22 @@
+package example.HelloWorld where
+
+multiply :: Int -> Int -> Int
+multiply x y = x * y
+
+showMultiply :: Int -> Int -> String
+showMultiply x y =
+  let
+    result = multiply x y
+  in
+    unwords [
+      show x,
+      "*",
+      show y,
+      "=",
+      show result,
+    ]
+
+main :: [String] -> IO ()
+main _ = do
+  x = showMultiply 6 7
+  println x
